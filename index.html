@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours Particuliers de Mathématiques avec Mr. Levy - Expert Certifié</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); color: #333; line-height: 1.6; overflow-x: hidden; }
+        .parallax { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        .typing { border-right: 2px solid #fff; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 50% { border-color: transparent; } 51%, 100% { border-color: #fff; } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .bounce-in { animation: bounceIn 1s ease; }
+        @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.3); } 50% { opacity: 1; transform: scale(1.05); } 70% { transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .glow { transition: box-shadow 0.3s ease; }
+        .glow:hover { box-shadow: 0 0 20px rgba(0, 123, 255, 0.8); }
+        .rotate { transition: transform 0.5s ease; }
+        .rotate:hover { transform: rotate(5deg) scale(1.1); }
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+        .particle { position: absolute; font-size: 2em; color: rgba(0, 123, 255, 0.3); animation: float 10s linear infinite; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-100px) rotate(360deg); } }
+        header { background: linear-gradient(135deg, #007bff 0%, #0053a0 50%, #0056b3 100%); color: white; text-align: center; padding: 80px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); position: relative; }
+        header h1 { font-size: 3.2em; margin: 0; font-weight: 700; text-shadow: 3px 3px 6px rgba(0,0,0,0.6); }
+        header p { font-size: 1.4em; margin: 20px 0; font-weight: 300; }
+        .cta-button { display: inline-block; padding: 20px 40px; background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2em; box-shadow: 0 6px 20px rgba(40, 167, 69, 0.5); transition: all 0.4s ease; }
+        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 10px 30px rgba(40, 167, 69, 0.7); }
+        section { max-width: 1200px; margin: 60px auto; padding: 60px; background: white; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.15); margin-bottom: 40px; }
+        h2 { color: #007bff; border-bottom: 5px solid #007bff; padding-bottom: 20px; font-size: 2.5em; text-align: center; font-weight: 600; margin-bottom: 40px; }
+        .card { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card-item { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 30px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: all 0.4s ease; text-align: center; }
+        .card-item:hover { transform: translateY(-10px) rotate(2deg); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .card-item i { font-size: 3em; color: #007bff; margin-bottom: 20px; animation: rotate 5s linear infinite; }
+        @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        ul { list-style: none; padding: 0; }
+        ul li { margin-bottom: 20px; font-size: 1.2em; }
+        ul li::before { content: '✓'; color: #28a745; font-weight: bold; margin-right: 15px; }
+        .math-design { text-align: center; margin: 40px 0; }
+        .math-design img { max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: all 0.5s ease; }
+        .math-design img:hover { transform: scale(1.1) rotate(3deg); filter: brightness(1.2); }
+        .math-equation { font-family: 'Times New Roman', serif; font-size: 2em; color: #007bff; margin: 25px 0; text-align: center; font-weight: bold; animation: glow 2s ease-in-out infinite alternate; }
+        @keyframes glow { from { text-shadow: 0 0 5px #007bff; } to { text-shadow: 0 0 20px #007bff, 0 0 30px #007bff; } }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .gallery img { width: 100%; border-radius: 15px; transition: all 0.4s ease; }
+        .gallery img:hover { transform: scale(1.1) rotate(-5deg); filter: sepia(0.3); }
+        blockquote { font-style: italic; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border-left: 6px solid #007bff; border-radius: 15px; font-size: 1.2em; position: relative; cursor: pointer; }
+        blockquote::before { content: '"'; font-size: 4em; color: #007bff; position: absolute; top: -10px; left: 10px; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        .modal-content { background: white; margin: 15% auto; padding: 20px; border-radius: 10px; width: 80%; max-width: 500px; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+        .tooltip { position: relative; display: inline-block; }
+        .tooltip .tooltiptext { visibility: hidden; width: 200px; background: #007bff; color: white; text-align: center; border-radius: 5px; padding: 5px; position: absolute; z-index: 1; bottom: 125%; left: 50%; margin-left: -100px; opacity: 0; transition: opacity 0.3s; }
+        .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+        .accordion { background: #f8f9fa; border: none; outline: none; padding: 20px; text-align: left; font-size: 1.2em; cursor: pointer; transition: background 0.3s ease; color: #000; }
+        .accordion:hover { background: #e9ecef; color: #007bff; }
+        .panel { padding: 0 20px; background: white; max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        form { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 700px; margin: 0 auto; }
+        form input, form textarea { padding: 18px; border: 2px solid #ddd; border-radius: 10px; font-size: 1.1em; transition: all 0.3s ease; }
+        form input:focus, form textarea:focus { border-color: #007bff; box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
+        form textarea { grid-column: span 2; }
+        button { padding: 20px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; border: none; border-radius: 10px; cursor: pointer; font-size: 1.2em; font-weight: bold; transition: all 0.3s ease; grid-column: span 2; }
+        button:hover { background: linear-gradient(135deg, #0056b3 0%, #003d82 100%); transform: scale(1.02); }
+        footer { text-align: center; padding: 50px; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; font-size: 1.1em; }
+        footer .cta-button { margin-top: 25px; }
+        @media (max-width: 768px) { header h1 { font-size: 2.2em; } .card { grid-template-columns: 1fr; } form { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <header class="parallax">
+        <h1 class="typing">Cours Particuliers de Mathématiques avec Mr. Levy</h1>
+        <p>Expert certifié en maths avancées – Aidez vos enfants à exceller dans les matières complexes. Plus de 500 élèves satisfaits !</p>
+        <a href="#contact" class="cta-button pulse"><i class="fas fa-calendar-check"></i> Réservez Votre Premier Cours Gratuit</a>
+    </header>
+
+    <section id="introduction" class="fade-in">
+        <h2>Pourquoi Choisir Mr. Levy pour Vos Cours de Maths ?</h2>
+        <p>Avec plus de 20 ans d'expérience, Mr. Levy transforme les maths en une aventure passionnante. Spécialisé dans les niveaux avancés (lycée, prépa, université), il utilise des méthodes pédagogiques innovantes pour rendre les concepts complexes accessibles. Que ce soit pour rattraper un retard, préparer un examen ou explorer des sujets de recherche, ses cours personnalisés garantissent des résultats durables. Découvrez comment ses élèves ont vu leurs notes s'améliorer de 2 points en moyenne !</p>
+        <div class="math-design">
+            <img src="https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg" alt="Équations d'Einstein" class="glow">
+            <div class="math-equation">E = mc² – Relativité générale</div>
+        </div>
+    </section>
+
+    <section id="specialisations" class="fade-in">
+        <h2>Mes Spécialisations : Expertise dans Tous les Domaines</h2>
+        <p>Je maîtrise les maths à un niveau postdoctoral, avec des applications pratiques. Voici mes domaines clés, illustrés par des designs visuels :</p>
+        <div class="card">
+            <div class="card-item tooltip">
+                <i class="fas fa-infinity"></i>
+                <h3>Algèbre Avancée</h3>
+                <p>Groupes, anneaux, corps – Idéal pour les concours.</p>
+                <span class="tooltiptext">Visualisez avec des diagrammes de groupes de Lie pour une compréhension profonde.</span>
+            </div>
+            <div class="card-item tooltip">
+                <i class="fas fa-chart-line"></i>
+                <h3>Analyse Mathématique</h3>
+                <p>Séries, intégrales, équations différentielles.</p>
+                <span class="tooltiptext">Appliqué à la physique et l'ingénierie pour des calculs réels.</span>
+            </div>
+            <div class="card-item tooltip">
+                <i class="fas fa-shapes"></i>
+                <h3>Géométrie et Topologie</h3>
+                <p>Espaces non-euclidiens, visualisation de formes.</p>
+                <span class="tooltiptext">Au-delà du niveau universitaire, pour les chercheurs.</span>
+            </div>
+            <div class="card-item tooltip">
+                <i class="fas fa-dice"></i>
+                <h3>Probabilités et Statistiques</h3>
+                <p>Modèles quantiques, data science.</p>
+                <span class="tooltiptext">Pour les carrières en finance et IA.</span>
+            </div>
+            <div class="card-item tooltip">
+                <i class="fas fa-cogs"></i>
+                <h3>Mathématiques Appliquées</h3>
+                <p>Informatique, économie, environnement.</p>
+                <span class="tooltiptext">Approche interdisciplinaire innovante.</span>
+            </div>
+        </div>
+        <div class="math-design">
+            <img src="https://images.pexels.com/photos/396549/pexels-photo-396549.jpeg" alt="Topologie mathématique" class="rotate">
+            <div class="math-equation">Topologie : Espaces connexes et compacts</div>
+        </div>
+    </section>
+
+    <section id="galerie-maths" class="fade-in">
+        <h2>Galerie de Designs Mathématiques : Explorez l'Abstrait</h2>
+        <p>Ces visualisations représentent des concepts de haut niveau, accessibles seulement aux experts. En cours, nous les utilisons pour rendre l'apprentissage visuel et mémorable.</p>
+        <div class="gallery">
+            <img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg" alt="Fractale de Mandelbrot">
+            <img src="https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg" alt="Théorie des cordes">
+            <img src="https://images.pexels.com/photos/396548/pexels-photo-396548.jpeg" alt="Espace de Hilbert">
+            <img src="https://images.pexels.com/photos/256262/pexels-photo-256262.jpeg" alt="Équations relativistes">
+        </div>
+        <div class="math-equation">∫ f(x) dx = F(x) + C – Calcul intégral avancé</div>
+    </section>
+
+    <section id="temoignages" class="fade-in">
+        <h2>Témoignages de Mes Élèves</h2>
+        <blockquote onclick="openModal('Marie, Terminale S : Mr. Levy a rendu les maths fascinantes ! J\'ai passé mon bac S avec mention grâce à ses explications claires et ses designs visuels.')">Marie, Terminale S : Mr. Levy a rendu les maths fascinantes ! J'ai passé mon bac S avec mention grâce à ses explications claires et ses designs visuels.</blockquote>
+        <blockquote onclick="openModal('Thomas, Prépa Maths : Expert polyvalent, il m\'a aidé à intégrer une grande école. Ses cours sont personnalisés et efficaces.')">Thomas, Prépa Maths : Expert polyvalent, il m'a aidé à intégrer une grande école. Ses cours sont personnalisés et efficaces.</blockquote>
+        <blockquote onclick="openModal('Lucas, Licence Maths : Enfin quelqu\'un qui explique les fractales et la topologie sans jargon inutile. Mes notes ont explosé !')">Lucas, Licence Maths : Enfin quelqu'un qui explique les fractales et la topologie sans jargon inutile. Mes notes ont explosé !</blockquote>
+    </section>
+
+    <section id="tarifs" class="fade-in">
+        <h2>Tarifs et Offres</h2>
+        <div class="card">
+            <div class="card-item">
+                <i class="fas fa-euro-sign"></i>
+                <h3>Cours Individuel</h3>
+                <p>45€/h – Adapté à vos besoins, avec supports personnalisés.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-users"></i>
+                <h3>Cours en Groupe</h3>
+                <p>25€/h par personne – Idéal pour amis ou frères/sœurs.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-gift"></i>
+                <h3>Pack Découverte</h3>
+                <p>3 cours à 120€ – Premier cours gratuit pour tester !</p>
+            </div>
+        </div>
+        <p>Contactez-moi pour un devis sur mesure. Paiement sécurisé, factures disponibles.</p>
+    </section>
+
+    <section id="faq" class="fade-in" style="background: #f9f9f9; color: #000;">
+        <h2>Questions Fréquentes (FAQ)</h2>
+        <button class="accordion">Quels niveaux enseignez-vous ?</button>
+        <div class="panel">
+            <p>Du collège au postdoctoral – Je m'adapte à tous les niveaux, avec un focus sur les maths avancées.</p>
+        </div>
+        <button class="accordion">Les cours sont-ils en ligne ou en présentiel ?</button>
+        <div class="panel">
+            <p>Les deux ! En ligne via Zoom pour la flexibilité, ou à domicile dans la région.</p>
+        </div>
+        <button class="accordion">Comment réserver un cours ?</button>
+        <div class="panel">
+            <p>Remplissez le formulaire ci-dessous – Réponse sous 24h pour un premier cours gratuit.</p>
+        </div>
+        <button class="accordion">Quels sont vos horaires de cours ?</button>
+        <div class="panel">
+            <p>Du lundi au samedi, de 9h à 20h. Je m'adapte à votre emploi du temps pour des cours en semaine ou le week-end.</p>
+        </div>
+        <button class="accordion">Offrez-vous des cours gratuits ou des remises ?</button>
+        <div class="panel">
+            <p>Oui ! Le premier cours est gratuit pour tester. Des remises pour les packs de 5 cours ou plus, et pour les familles nombreuses.</p>
+        </div>
+        <button class="accordion">Comment suivre les progrès de mon enfant ?</button>
+        <div class="panel">
+            <p>Je fournis des rapports mensuels détaillés, des exercices corrigés, et des bilans de progression. Nous communiquons régulièrement pour ajuster les objectifs.</p>
+        </div>
+    </section>
+
+    <section id="blog" class="fade-in">
+        <h2>Blog : Conseils en Maths Avancées</h2>
+        <div class="card">
+            <div class="card-item">
+                <i class="fas fa-book"></i>
+                <h3>Comprendre les Fractales</h3>
+                <p>Article : Les fractales de Mandelbrot expliquées simplement. Cliquez pour lire.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-brain"></i>
+                <h3>Topologie pour Débutants</h3>
+                <p>Guide : Espaces connexes et compacts en topologie. Découvrez plus.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-calculator"></i>
+                <h3>Prépa aux Concours</h3>
+                <p>Astuces : Réussir les maths en prépa avec des designs visuels.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Réservez Votre Cours Maintenant</h2>
+        <p>Prêt à maîtriser les maths avancées ? Remplissez le formulaire pour un premier cours d'essai gratuit. Réponse sous 24h !</p>
+        <form>
+            <input type="text" placeholder="Votre nom" required>
+            <input type="tel" placeholder="Votre numéro de téléphone" required>
+            <input type="email" placeholder="Votre email">
+            <textarea placeholder="Décrivez votre niveau et objectifs (ex. : Prépa maths, algèbre avancée)" rows="5" required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer ma Demande</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2023 Mr. Levy - Cours Particuliers de Maths Avancées. Tous droits réservés. | <a href="#" style="color: white;">Politique de confidentialité</a></p>
+        <a href="#contact" class="cta-button"><i class="fas fa-phone"></i> Appelez-moi : 06 XX XX XX XX</a>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Particules flottantes
+            const particlesContainer = document.getElementById('particles');
+            if (particlesContainer) {
+                const symbols = ['π', '∑', '∫', '√', '∞'];
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 10 + 's';
+                    particlesContainer.appendChild(particle);
+                }
+            }
+
+            // Animations au scroll
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.1 };
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
+
+            // Accordéon FAQ
+            const acc = document.getElementsByClassName('accordion');
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + 'px';
+                    }
+                });
+            }
+
+            // Modal pour témoignages
+            function openModal(text) {
+                document.getElementById('modalText').textContent = text;
+                document.getElementById('myModal').style.display = 'block';
+            }
+            function closeModal() {
+                document.getElementById('myModal').style.display = 'none';
+            }
+            window.onclick = function(event) {
+                if (event.target == document.getElementById('myModal')) {
+                    closeModal();
+                }
+            }
+        };
+    </script>
+</body>
+</html>
